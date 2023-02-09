@@ -17,7 +17,14 @@ router.get('/', async (req,res) => {
     res.json(await Users.findAll());
     })
 
-
+    //edit entries in the database
+router.put('/:id', async (req, res) => {
+    await Users.update({
+        where:{
+            id
+        }
+    })
+})
 // delete a user from the db
 router.delete('/:id', async (req,res)=>{
     await Users.destroy({
