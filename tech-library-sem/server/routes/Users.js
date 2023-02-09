@@ -7,6 +7,16 @@ const router = express.Router();
 router.use(express.json());
 router.use(express.urlencoded({extended: true}))
 
+// read entries from the database
+router.get('/', async (req,res) => {
+    await Users.get({
+        where:{
+            id: req.params.id
+        }
+    });
+    res.json(await Users.findAll());
+    })
+
 
 // delete a user from the db
 router.delete('/:id', async (req,res)=>{
