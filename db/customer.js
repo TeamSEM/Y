@@ -1,1 +1,0 @@
-// this will be for potential customers who want great service
