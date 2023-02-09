@@ -25,6 +25,7 @@ router.put('/:id', async (req, res) => {
         }
     })
 })
+
 // delete a user from the db
 router.delete('/:userid', async (req,res)=>{
     await Users.destroy({
