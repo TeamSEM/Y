@@ -21,7 +21,7 @@ router.get('/', async (req,res) => {
 router.put('/:id', async (req, res) => {
     await Users.update({
         where:{
-            id
+            id: req.params.id
         }
     })
 })
