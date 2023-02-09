@@ -25,13 +25,15 @@ router.put('/:id', async (req, res) => {
         }
     })
 })
+
 // delete a user from the db
-router.delete('/:id', async (req,res)=>{
+router.delete('/:userid', async (req,res)=>{
     await Users.destroy({
         where:{
-            id: req.params.id
+            id: req.params.userid
         }
     });
+    console.log('user has been deleted')
     res.json(await Users.findAll());
  })
 
