@@ -10,9 +10,9 @@ export default function LoginForm({setUserEmail}) {
 
     const handleSubmit = async (e) => {
         // setUserEmail(email)
-        localStorage.setItem("email", email);
-
-		const response = await fetch(`${apiURL}/users`, {
+        // localStorage.setItem("email", email);
+            e.preventDefault();
+		const response = await fetch(`${apiURL}/users/register`, {
 			method: "POST",
 			headers: {
 				'Content-Type': 'application/json'

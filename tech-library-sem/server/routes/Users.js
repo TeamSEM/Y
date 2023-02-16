@@ -46,6 +46,7 @@ router.post('/register', setUser, async (req, res, next) => {
         password: hashedPassword
         });
         const token = jwt.sign({id,username}, process.env.JWT_SECRET);
+        console.log('token', token, user)
         res.send({message: 'success', token });
     } catch (error) {
         console.log(error);
