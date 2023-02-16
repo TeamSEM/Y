@@ -35,4 +35,12 @@ router.delete('/:id', async (req,res)=>{
     res.json(await Users.findAll());
  })
 
+ // User add entries
+router.post("/", async (req,res) => {
+
+    console.log('added item', req.body )
+    const itemtoAdd = await Items.create(req.body);
+    res.json(await Users.findAll());
+    })
+
 module.exports = router;
