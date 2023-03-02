@@ -12,9 +12,9 @@ export default function LoginForm({setUserEmail}) {
         // setUserEmail(email)
         // localStorage.setItem("email", email);
             e.preventDefault();
-		const response = await fetch(`${apiURL}/users/register/`, {
+		const response = await fetch(`http://localhost:3000/users/register`, {
 			method: "POST",
-			headers: {
+            headers: {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(

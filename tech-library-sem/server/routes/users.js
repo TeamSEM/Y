@@ -1,7 +1,7 @@
 const express = require("express");
 const {Users} = require("../models");
 const jwt = require('jsonwebtoken');
-const router = express.Router();
+const router = new express.Router();
 const cors = require('cors');
 
 const bcrypt = require('bcrypt');
@@ -49,7 +49,7 @@ router.post('/register', setUser, async (req, res, next) => {
         console.log('token', token, user)
         res.send({message: 'success', token });
     } catch (error) {
-        console.log(error);
+        console.log(error, "you have an error");
         next(error);
     }
   });
